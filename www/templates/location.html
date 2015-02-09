@@ -1,0 +1,31 @@
+<ion-header-bar>
+  <h1 class="title">Save my places</h1>
+</ion-header-bar>
+
+<ion-content>
+	
+	<div class="modal">
+		
+		<form ng-cloak name="userForm" ng-submit="getLocation(query)" novalidate>
+			<div class="list">
+			  <label class="item item-input item-floating-label">
+				<span class="input-label">Search for...</span>
+				<input type="text" name="query" placeholder="What are you loooking for?" ng-model="query" ng-minlength=3>
+			  </label>
+			</div>
+			<button type="submit" ng-disabled="!userForm.query.$dirty" class="button button-positive button-block button-outline">
+				Done
+			</button>
+		</form>
+
+<!--
+		<div class="loader center">
+		  <svg class="circular">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+		  </svg>
+		</div>
+-->
+
+	</div>
+
+</ion-content>

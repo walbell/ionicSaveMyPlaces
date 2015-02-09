@@ -1,0 +1,11 @@
+<ion-view title="Venues">
+<ion-content>
+	<ion-list>
+      <ion-item ng-repeat="venue in venues" class="item item-thumbnail-left item-button-left" ui-sref="app.explore.detail({venue: $index})">
+		  <img src={{venue.photoURL}}>
+		  <h2>{{venue.name}}</h2>
+		  <p>Rating: {{venue.rating}}</p>
+      </ion-item>
+    </ion-list>
+</ion-content>
+</ion-view>

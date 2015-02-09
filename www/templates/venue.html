@@ -1,0 +1,21 @@
+<ion-view title={{venue.name}}>
+        <ion-content>
+            <div class="list card">
+
+			  <div class="item">
+				<h2>{{venue.name}}</h2>
+				<p>{{venue.categories[0].name}}</p>
+			  </div>
+
+			  <div class="item item-image">
+				<img src="{{venue.bigPhotoURL}}">
+			  </div>
+
+			  <a class="item item-icon-left positive" href="#" ng-click="savePlace(venue)">
+				<i class="icon ion-star"></i>
+				Save as Favorite 
+			  </a>
+
+			</div>
+        </ion-content>
+      </ion-view>

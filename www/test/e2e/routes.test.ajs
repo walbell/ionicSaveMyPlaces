@@ -1,0 +1,6 @@
+describe('E2E: Routes', function() {
+	it('should load the location page', function(){
+		browser().navigateTo('/#/');
+		expect(browser().location().path()).toBe('/')
+	});
+});

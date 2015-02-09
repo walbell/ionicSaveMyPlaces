@@ -1,0 +1,10 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/walbell/Desktop/ionic/saveMyPlaces/platforms/ios/build/emulator/saveMyPlaces.app/www/lib/ionic/js/ionic.min.js",
+        "/Users/walbell/Desktop/ionic/saveMyPlaces/platforms/ios/build/emulator/saveMyPlaces.app/www/plugins/org.apache.cordova.device/www/device.js",
+        "/Users/walbell/Desktop/ionic/saveMyPlaces/www/lib/ionic/js/ionic.min.js",
+        "/Users/walbell/Desktop/ionic/saveMyPlaces/www/lib/ionic/js/ionic.js",
+        "/Users/walbell/Desktop/ionic/saveMyPlaces/www/lib/ionic/js/ionic.bundle.min.js",
+        "/Users/walbell/Desktop/ionic/saveMyPlaces/www/js/services/venuesService.js"
+    ]
+}

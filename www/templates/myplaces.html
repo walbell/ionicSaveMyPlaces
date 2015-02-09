@@ -1,0 +1,13 @@
+<ion-view title="Venues">
+<ion-content>
+	<ion-list>
+      <ion-item ng-repeat="myvenue in myvenues track by $index" class="item item-thumbnail-left item-button-right">
+		  <img src={{myvenue.photoURL}}>
+		  <h2>{{myvenue.name}}</h2>
+		  <p>Rating: {{myvenue.rating}}</p>
+		  <button class="button ion-close-round icon ion-close-circled assertive" ng-click="deleteFavVenue(myvenue)"></button>
+
+      </ion-item>
+    </ion-list>
+</ion-content>
+</ion-view>
