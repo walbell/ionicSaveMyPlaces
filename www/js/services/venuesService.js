@@ -23,7 +23,7 @@
 					
 					return $http.jsonp(url).success(function(data){
 //        			console.log(data);
-					if (data.length>0)
+					if (data.results.length>0)
 					{
 						for (var i=0; i<data.results.length; i++)
 						{
@@ -35,7 +35,10 @@
 						}		
 						venues=data.results;
 					}
+					else
+					{
 						venues={};
+					}
     				});
 					},
 			getVenue: function(index) {
