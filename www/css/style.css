@@ -36,3 +36,24 @@
 {
 	background-color: transparent !important;
 }
+
+
+.ng-hide {
+  display:none!important;
+}
+
+
+.location-form {
+  -webkit-transition:1s linear all;
+  transition:1s linear all;
+  opacity:1;
+}
+
+.location-form.ng-hide {
+  opacity:0;
+}
+
+.location-form.ng-hide-add, .location-form.ng-hide-remove {
+
+  display:block!important;
+}

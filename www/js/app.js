@@ -73,8 +73,25 @@ app.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
   
 })
 
-app.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+app.run(function($ionicPlatform, $rootScope, $location, venuesService) {
+	
+	   // register listener to watch route changes
+    $rootScope.$on( "$stateChangeStart", function(event, next, current) {
+      if ( !venuesService.checkPosition() ) {
+		  console.log(next.templateUrl);
+        // no logged user, we should be going to #login
+        if ( next.templateUrl == "templates/location.html" ) {
+          console.log( "already going to #login, no redirect needed")
+        } else {
+          // not going to #login, we should redirect now
+		  
+//          $state.go( "location" );
+			$location.path("/location");
+        }
+      }         
+    });
+	
+  $ionicPlatform.ready(function() {  
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {

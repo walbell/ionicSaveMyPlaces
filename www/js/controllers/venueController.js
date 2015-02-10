@@ -3,6 +3,8 @@
 	var venueController = function ($scope, venuesService, venue, $ionicPopup){		
 		$scope.venue = venue;
 		
+		console.log(venue);
+		
 		// An alert dialog
 		 $scope.showAlert = function() {
 		   var alertPopup = $ionicPopup.alert({

@@ -15,21 +15,27 @@
 			venues : function() {
 					console.log(position);
 				
+					
+				
 					var latitude = position.latitude;
 					var longitude = position.longitude;
 					var url='http://ec2-54-189-67-148.us-west-2.compute.amazonaws.com:9900/venues?q_text=%23'+query+'&lon='+position.longitude+'&lat='+position.latitude+'&callback=JSON_CALLBACK;'
 					
 					return $http.jsonp(url).success(function(data){
-        			console.log(data);
-					for (var i=0; i<data.results.length; i++)
+//        			console.log(data);
+					if (data.length>0)
 					{
-						if (data.results[i].featuredPhotos)
+						for (var i=0; i<data.results.length; i++)
 						{
-							data.results[i].photoURL=data.results[i].featuredPhotos.items[0].prefix+"300x300"+data.results[i].featuredPhotos.items[0].suffix;
-							data.results[i].bigPhotoURL=data.results[i].featuredPhotos.items[0].prefix+"400x400"+data.results[i].featuredPhotos.items[0].suffix;
-						}
-					}		
-					venues=data.results;
+							if (data.results[i].featuredPhotos)
+							{
+								data.results[i].photoURL=data.results[i].featuredPhotos.items[0].prefix+"300x300"+data.results[i].featuredPhotos.items[0].suffix;
+								data.results[i].bigPhotoURL=data.results[i].featuredPhotos.items[0].prefix+"400x400"+data.results[i].featuredPhotos.items[0].suffix;
+							}
+						}		
+						venues=data.results;
+					}
+						venues={};
     				});
 					},
 			getVenue: function(index) {
@@ -40,9 +46,12 @@
 				console.log("Saving position");
 				position=pos;
 			},
-			getPosition: function(){
-				console.log("Getting position");
-				return position;
+			checkPosition: function(){
+				console.log("Checking position");
+				if (position.latitude)
+					return true;
+				else
+					return false;
 			},
 			saveQuery: function (q){
 			    console.log("Saving query");

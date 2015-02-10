@@ -14,17 +14,21 @@
 		
 		venuesService.venues().success(function(data){
 			
-			console.log(data);
+//			console.log(data);
 			
-			for (var i=0; i<data.results.length; i++)
+			if (data.results.length>0)
 			{
-				if (data.results[i].featuredPhotos)
-				{
-					data.results[i].photoURL=data.results[i].featuredPhotos.items[0].prefix+"300x300"+data.results[i].featuredPhotos.items[0].suffix;
-				}
-			}
 			
-   			$scope.venues = data.results;
+				for (var i=0; i<data.results.length; i++)
+				{
+					if (data.results[i].featuredPhotos)
+					{
+						data.results[i].photoURL=data.results[i].featuredPhotos.items[0].prefix+"300x300"+data.results[i].featuredPhotos.items[0].suffix;
+					}
+				}
+
+				$scope.venues = data.results;
+			}
 			$ionicLoading.hide();
    			}).
 					error(function(data, status, headers, config) {

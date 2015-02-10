@@ -4,13 +4,13 @@
 
 <ion-content>
 	
-	<div class="modal">
+	<div class="modal location-form" ng-hide="!loading">
 		
 		<form ng-cloak name="userForm" ng-submit="getLocation(query)" novalidate>
 			<div class="list">
 			  <label class="item item-input item-floating-label">
 				<span class="input-label">Search for...</span>
-				<input type="text" name="query" placeholder="What are you loooking for?" ng-model="query" ng-minlength=3>
+				<input type="text" name="query" placeholder="What are you looking for?" ng-model="query" ng-minlength=3>
 			  </label>
 			</div>
 			<button type="submit" ng-disabled="!userForm.query.$dirty" class="button button-positive button-block button-outline">
